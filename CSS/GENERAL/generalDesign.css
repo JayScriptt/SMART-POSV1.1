@@ -1,0 +1,256 @@
+* {
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+}
+*::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+:root {
+  --background-color: white;
+  --text-color: black;
+  --icon-fill: black;
+  --icon-fill-hover: gray;
+  --border-color: black;
+  --choice-name-color: black;
+}
+[data-theme="dark"] {
+  --background-color: black;
+  --text-color: white;
+  --icon-fill: white;
+  --icon-fill-hover: lightgray;
+  --border-color: white;
+  --choice-name-color: white;
+}
+.choiceName {
+  background-color: transparent;
+  color: var(--choice-name-color);
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+  right: 0;
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition:
+    background-color 0.5s ease,
+    color 0.5s ease;
+}
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition:
+    background-color 0.5s ease,
+    color 0.5s ease;
+}
+.optionChoice {
+  cursor: pointer;
+  margin: 10px;
+  border: none;
+}
+
+.theme-toggle {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  border: none;
+  position: absolute;
+  top: 3%;
+  right: 2%;
+  transition:
+    background-color 0.5s ease,
+    color 0.5s ease;
+}
+
+.card {
+  background-color: var(--background-color);
+  transition: background-color 0.5s ease;
+  border: solid 2px var(--border-color);
+}
+
+.sun-and-moon > :is(.moon, .sun, .sun-beams) {
+  transform-origin: center;
+}
+
+.sun-and-moon > :is(.moon, .sun) {
+  fill: var(--icon-fill);
+  transition: fill 0.5s ease;
+}
+
+.theme-toggle:is(:hover, :focus-visible) > .sun-and-moon > :is(.moon, .sun) {
+  fill: var(--icon-fill-hover);
+}
+
+.sun-and-moon > .sun-beams {
+  stroke: var(--icon-fill);
+  stroke-width: 2px;
+}
+
+.theme-toggle:is(:hover, :focus-visible) .sun-and-moon > .sun-beams {
+  stroke: var(--icon-fill-hover);
+}
+.card {
+  background-color: var(--background-color);
+}
+[data-theme="dark"] .sun-and-moon > .sun {
+  transform: scale(1.75);
+}
+
+[data-theme="dark"] .sun-and-moon > .sun-beams {
+  opacity: 0;
+}
+
+[data-theme="dark"] .sun-and-moon > .moon > circle {
+  transform: translateX(-7px);
+}
+
+@supports (cx: 1) {
+  [data-theme="dark"] .sun-and-moon > .moon > circle {
+    cx: 17;
+    transform: translateX(0);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .sun-and-moon > .sun {
+    transition: transform 0.5s var(--ease-elastic-3);
+  }
+
+  .sun-and-moon > .sun-beams {
+    transition:
+      transform 0.5s var(--ease-elastic-4),
+      opacity 0.5s var(--ease-3);
+  }
+
+  .sun-and-moon .moon > circle {
+    transition: transform 0.25s var(--ease-out-5);
+  }
+
+  @supports (cx: 1) {
+    .sun-and-moon .moon > circle {
+      transition: cx 0.25s var(--ease-out-5);
+    }
+  }
+
+  [data-theme="dark"] .sun-and-moon > .sun {
+    transition-timing-function: var(--ease-3);
+    transition-duration: 0.25s;
+    transform: scale(1.75);
+  }
+
+  [data-theme="dark"] .sun-and-moon > .sun-beams {
+    transition-duration: 0.15s;
+    transform: rotateZ(-25deg);
+  }
+
+  [data-theme="dark"] .sun-and-moon > .moon > circle {
+    transition-duration: 0.5s;
+    transition-delay: 0.25s;
+  }
+}
+
+#receiptContainer {
+  border: var(--border-color) solid 2px;
+  border-radius: 5px;
+  height: 60vh;
+  padding: 0%;
+  position: relative;
+  position: sticky;
+}
+
+#checkoutBtn {
+  background-color: var(--text-color);
+  color: var(--background-color);
+  position: absolute;
+  bottom: 0;
+  border-radius: 5px;
+  width: 100%;
+  margin-top: 0;
+  border: none;
+  overflow: hidden;
+  padding: 10px;
+  left: 0;
+}
+
+#menuContainer {
+  margin-top: 7%;
+}
+/*===================================
+/*===================================
+ | Actions Buttons Styles Start Here | 
+  ==================================*/
+#actionBtn {
+  width: 100%;
+  padding: 10px;
+  height: 6vh;
+  cursor: pointer;
+  display: flex;
+  margin: 10px;
+  align-items: center;
+  justify-content: center; /* Center text horizontally */
+  background: red;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+  background: #e62222;
+}
+
+#actionBtn,
+#actionBtn span {
+  transition: 200ms;
+}
+
+#actionBtn .text {
+  color: white;
+  font-weight: bold;
+  font-size: 0.9rem;
+  padding: 10px;
+}
+
+#actionBtn .icon {
+  position: absolute;
+  border-left: 1px solid #c41b1b;
+  transform: translateX(-110px);
+  height: 1vh;
+  width: 1vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#actionBtn svg {
+  width: 20px;
+  fill: #eee;
+  opacity: 0; /* Make SVG transparent initially */
+  transition: opacity 200ms;
+}
+
+#actionBtn:hover {
+  background: #ff3636;
+}
+
+#actionBtn:hover .text {
+  color: transparent;
+}
+
+#actionBtn:hover .icon {
+  width: 100%;
+  border-left: none;
+  transform: translateX(0);
+  justify-content: center;
+}
+
+#actionBtn:hover svg {
+  opacity: 1; /* Make SVG visible on hover */
+}
+
+#actionBtn:focus {
+  outline: none;
+}
+
+#actionBtn:active .icon svg {
+  transform: scale(1);
+}
+/*===================================
+   | Actions Buttons Styles Ends Here  | 
+    ==================================*/

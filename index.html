@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>POS Login</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="/node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/node_modules/bootstrap-icons/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="/CSS/GENERAL/generalDesign.css" />
+
+    <style>
+      * {
+        color: white;
+      }
+      body {
+        background-color: #ca6c00;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      .background {
+        width: 430px;
+        height: 520px;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        top: 50%;
+      }
+      .background .shape {
+        height: 200px;
+        width: 200px;
+        position: absolute;
+        border-radius: 50%;
+      }
+      .shape:first-child {
+        background: linear-gradient(#1845ad, #23a2f6);
+        left: -80px;
+        top: -80px;
+      }
+      .shape:last-child {
+        background: linear-gradient(to right, #ff512f, #f09819);
+        right: -30px;
+        bottom: -80px;
+      }
+      #formContainer {
+        border: none;
+        border-radius: 20px;
+        width: 90%;
+        max-width: 430px;
+        height: auto;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(1px);
+        -webkit-backdrop-filter: blur(1px);
+        padding: 40px;
+        text-align: center;
+      }
+
+      input {
+        width: 100%;
+        border-radius: 5px;
+        border: none;
+      }
+      #submitBtn {
+        position: relative;
+      }
+      .password-container {
+        position: relative;
+      }
+      .password-container input {
+        padding-right: 40px;
+      }
+      .password-container .toggle-password {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+      }
+      i {
+        position: relative;
+      }
+    </style>
+  </head>
+  <body class="indexBody">
+    <div class="background">
+      <div class="shape"></div>
+      <div class="shape"></div>
+    </div>
+
+    <div class="container-fluid" id="formContainer">
+      <form action="" method="POST">
+        <h3>Login</h3>
+        <div class="form-group">
+          <label class="m-1" for="username">Username</label>
+          <input
+            class="form-control m-1"
+            type="text"
+            placeholder="Username"
+            id="username"
+            name="username"
+            required
+          />
+        </div>
+        <div class="form-group password-container">
+          <label class="m-1" for="password">Password</label>
+          <input
+            class="form-control m-1"
+            type="password"
+            placeholder="Password"
+            id="password"
+            name="password"
+            required
+          />
+          <i
+            class="bi bi-eye toggle-password"
+            onclick="togglePassword()"
+            style="color: black; margin-top: 5.5%"
+          ></i>
+        </div>
+        <button
+          class="btn btn-primary mt-3"
+          id="submitBtn"
+          type="submit"
+          name="submit"
+        >
+          Login
+        </button>
+      </form>
+    </div>
+
+    <script>
+      function togglePassword() {
+        const passwordInput = document.getElementById("password");
+        const type =
+          passwordInput.getAttribute("type") === "password"
+            ? "text"
+            : "password";
+        passwordInput.setAttribute("type", type);
+      }
+    </script>
+  </body>
+</html>

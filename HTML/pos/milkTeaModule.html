@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MILKTEA MODULE</title>
+    <link
+      rel="stylesheet"
+      href="../../node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="../../CSS/GENERAL/generalDesign.css" />
+  </head>
+  <body>
+    <!-- sidebar starts here -->
+
+    <!-- sidebar ends here -->
+    <div class="toggle">
+      <button
+        class="theme-toggle"
+        id="theme-toggle"
+        title="Toggles light & dark"
+        aria-label="auto"
+        aria-live="polite"
+      >
+        <svg
+          class="sun-and-moon"
+          aria-hidden="true"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+        >
+          <mask class="moon" id="moon-mask">
+            <rect x="0" y="0" width="100%" height="100%" fill="white" />
+            <circle cx="24" cy="10" r="6" fill="black" />
+          </mask>
+          <circle
+            class="sun"
+            cx="12"
+            cy="12"
+            r="6"
+            mask="url(#moon-mask)"
+            fill="currentColor"
+          />
+          <g class="sun-beams" stroke="currentColor">
+            <line x1="12" y1="1" x2="12" y2="3" />
+            <line x1="12" y1="21" x2="12" y2="23" />
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+            <line x1="1" y1="12" x2="3" y2="12" />
+            <line x1="21" y1="12" x2="23" y2="12" />
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+          </g>
+        </svg>
+      </button>
+    </div>
+
+    <div class="container-fluid" id="menuContainer">
+      <div
+        class="row justify-content-evenly align-items-center p-4"
+        id="menuContainer"
+      >
+        <div class="col-1" id="actionBtnContainer">
+          <div class="row">
+            <button
+              class="noselect"
+              id="actionBtn"
+              style="background-color: green"
+            >
+              <span class="text">SIZE</span>
+              <span class="icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M18 3h-3V1H9v2H6c-1.1 0-2 .9-2 2v2h16V5c0-1.1-.9-2-2-2zm0 4H6V5h12v2zm-1 2H7c-1.1 0-2 .9-2 2v9c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2v-9c0-1.1-.9-2-2-2zm-1 11H8v-7h8v7z"
+                    fill="white"
+                  ></path>
+                </svg>
+              </span>
+            </button>
+            <button class="noselect" id="actionBtn">
+              <span class="text">VOID</span>
+              <span class="icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"
+                  ></path>
+                </svg>
+              </span>
+            </button>
+            <button
+              class="noselect"
+              id="actionBtn"
+              style="color: white; background-color: green"
+            >
+              <span class="text">ADD-ONS</span>
+              <span class="icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                >
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    fill="none"
+                  />
+                  <path
+                    d="M12 7v10m5-5H7"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+            </button>
+            <button
+              class="noselect"
+              id="actionBtn"
+              style="color: white; background-color: green"
+            >
+              <span class="text">MODIFY</span>
+              <span class="icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M14.06 9.94l-9.06 9.06v3h3l9.06-9.06-3-3zm3.02-3.02l-2.02-2.02 3-3 2.02 2.02-3 3zm-3.02 3.02l-2.02-2.02 3-3 2.02 2.02-3 3z"
+                    fill="white"
+                  ></path>
+                </svg>
+              </span>
+            </button>
+            <button
+              class="noselect"
+              id="actionBtn"
+              style="color: white; background-color: green"
+            >
+              <span class="text">RETURN</span>
+              <span class="icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M10 19V5l-7 7 7 7zm4-14h8v2h-8v-2zm0 4h8v2h-8v-2zm0 4h8v2h-8v-2zm0 4h8v2h-8v-2z"
+                  ></path>
+                </svg>
+              </span>
+            </button>
+          </div>
+        </div>
+        <div class="col-8">
+          <div class="row justify-content-evenly align-items-center">
+            <h1 class="text-center">Milktea Menu</h1>
+            <hr />
+            <div
+              class="col-sm-5 col-md-5 col-lg-3 col-xl-2 col-xxl-2 card optionChoice"
+            >
+              <img
+                src="../../ASSETS/IMAGES/MAIN MENU IMAGES/milkTeaMenu/winter melon.png"
+                alt="Winter Melon IMG"
+              />
+              <p class="choiceName">Winter Melon</p>
+            </div>
+            <div
+              class="col-sm-5 col-md-5 col-lg-3 col-xl-2 col-xxl-2 card optionChoice"
+            >
+              <img
+                src="../../ASSETS/IMAGES/MAIN MENU IMAGES/milkTeaMenu/taro.png"
+                alt="Taro IMG"
+              />
+              <p class="choiceName">Taro</p>
+            </div>
+            <div
+              class="col-sm-5 col-md-5 col-lg-3 col-xl-2 col-xxl-2 card optionChoice"
+            >
+              <img
+                src="../../ASSETS/IMAGES/MAIN MENU IMAGES/milkTeaMenu/strawberry.png"
+                alt="Strawberry IMG"
+              />
+              <p class="choiceName">Strawberry</p>
+            </div>
+            <div
+              class="col-sm-5 col-md-5 col-lg-3 col-xl-2 col-xxl-2 card optionChoice"
+            >
+              <img
+                src="../../ASSETS/IMAGES/MAIN MENU IMAGES/milkTeaMenu/salted caramel.png"
+                alt="Salted Caramel IMG"
+              />
+              <p class="choiceName">Salted Caramel</p>
+            </div>
+            <div
+              class="col-sm-5 col-md-5 col-lg-3 col-xl-2 col-xxl-2 card optionChoice"
+            >
+              <img
+                src="../../ASSETS/IMAGES/MAIN MENU IMAGES/milkTeaMenu/red velvet.png"
+                alt="Red Velvet IMG"
+              />
+              <p class="choiceName">Red Velvet</p>
+            </div>
+            <div
+              class="col-sm-5 col-md-5 col-lg-3 col-xl-2 col-xxl-2 col-xxl-2 card optionChoice"
+            >
+              <img
+                src="../../ASSETS/IMAGES/MAIN MENU IMAGES/milkTeaMenu/matcha.png"
+                alt="Matcha IMG"
+              />
+              <p class="choiceName">Matcha</p>
+            </div>
+            <div
+              class="col-sm-5 col-md-5 col-lg-3 col-xl-2 col-xxl-2 card optionChoice"
+            >
+              <img
+                src="../../ASSETS/IMAGES/MAIN MENU IMAGES/milkTeaMenu/double dutch.png"
+                alt="Double Dutch IMG"
+              />
+              <p class="choiceName">Double Dutch</p>
+            </div>
+            <div
+              class="col-sm-5 col-md-5 col-lg-3 col-xl-2 col-xxl-2 card optionChoice"
+            >
+              <img
+                src="../../ASSETS/IMAGES/MAIN MENU IMAGES/milkTeaMenu/dark choco.png"
+                alt="Dark ChocoSPECIALS / PROMO IMG"
+              />
+              <p class="choiceName">Dark Choco</p>
+            </div>
+            <div
+              class="col-sm-5 col-md-5 col-lg-3 col-xl-2 col-xxl-2 card optionChoice"
+            >
+              <img
+                src="../../ASSETS/IMAGES/MAIN MENU IMAGES/milkTeaMenu/choco hazelnut.png"
+                alt="Choco Hazelnut IMG"
+              />
+              <p class="choiceName">Choco Hazelnut</p>
+            </div>
+            <div
+              class="col-sm-5 col-md-5 col-lg-3 col-xl-2 col-xxl-2 card optionChoice"
+            >
+              <img
+                src="../../ASSETS/IMAGES/MAIN MENU IMAGES/milkTeaMenu/cookies & cream.png"
+                alt="Cookies & Cream IMG"
+              />
+              <p class="choiceName">Cookies & Cream</p>
+            </div>
+            <div
+              class="col-sm-5 col-md-5 col-lg-3 col-xl-2 col-xxl-2 card optionChoice"
+            >
+              <img
+                src="../../ASSETS/IMAGES/MAIN MENU IMAGES/milkTeaMenu/choco kisses.png"
+                alt="Choco Kisses IMG"
+              />
+              <p class="choiceName">Choco Kisses</p>
+            </div>
+            <div
+              class="col-sm-5 col-md-5 col-lg-3 col-xl-2 col-xxl-2 card optionChoice"
+            >
+              <img
+                src="../../ASSETS/IMAGES/MAIN MENU IMAGES/milkTeaMenu/brown sugar.png"
+                alt="Brown Sugar IMG"
+              />
+              <p class="choiceName">Brown Sugar</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-3 mt-5" id="receiptContainer">
+          <div class="row">
+            <div class="text-center" id="receipt">
+              <h4 class="m-3">Orders</h4>
+              <button id="checkoutBtn">Checkout</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- above end of row div -->
+    </div>
+    <!-- above end ofcontainer fluid -->
+    <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../JS/GENERAL SCRIPT/TOGGLE SCRIPT/lightDarkToggle.js"></script>
+  </body>
+</html>

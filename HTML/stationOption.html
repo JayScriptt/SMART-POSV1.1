@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Choose Module</title>
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="../CSS/GENERAL/generalDesign.css" />
+
+    <style>
+      * {
+        animation-duration: 0.8s;
+      }
+      img {
+        aspect-ratio: 1.5/1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="toggle">
+      <button
+        class="theme-toggle"
+        id="theme-toggle"
+        title="Toggles light & dark"
+        aria-label="auto"
+        aria-live="polite"
+      >
+        <svg
+          class="sun-and-moon"
+          aria-hidden="true"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+        >
+          <mask class="moon" id="moon-mask">
+            <rect x="0" y="0" width="100%" height="100%" fill="white" />
+            <circle cx="24" cy="10" r="6" fill="black" />
+          </mask>
+          <circle
+            class="sun"
+            cx="12"
+            cy="12"
+            r="6"
+            mask="url(#moon-mask)"
+            fill="currentColor"
+          />
+          <g class="sun-beams" stroke="currentColor">
+            <line x1="12" y1="1" x2="12" y2="3" />
+            <line x1="12" y1="21" x2="12" y2="23" />
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+            <line x1="1" y1="12" x2="3" y2="12" />
+            <line x1="21" y1="12" x2="23" y2="12" />
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+          </g>
+        </svg>
+      </button>
+    </div>
+    <div class="container-fluid">
+      <div>
+        <div
+          class="row justify-content-evenly align-items-center"
+          style="height: 70vh"
+        >
+          <h1 class="text-center mt-5">Choose Module</h1>
+
+          <div class="col-sm-11 col-md-5 col-lg-3 col-xl-3 card optionChoice">
+            <img
+              src="../ASSETS/IMAGES/CHOOSE MODULE IMAGE/KIOSK.png"
+              alt="KIOSK IMG"
+            />
+            <p class="choiceName">KIOSK</p>
+          </div>
+          <div
+            class="col-sm-11 col-md-5 col-lg-3 col-xl-3 card optionChoice"
+            onclick="window.location.href = '../HTML/pos/mainMenu.html'"
+          >
+            <img
+              src="../ASSETS/IMAGES/CHOOSE MODULE IMAGE/POS.png"
+              alt="POS IMG"
+            />
+            <p class="choiceName">POS</p>
+          </div>
+          <div class="col-sm-11 col-md-5 col-lg-3 col-xl-3 card optionChoice">
+            <img
+              src="../ASSETS/IMAGES/CHOOSE MODULE IMAGE/BREW BOARD.png"
+              alt="BREW BOARD IMG"
+            />
+            <p class="choiceName">BREW BOARD</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../JS/GENERAL SCRIPT/TOGGLE SCRIPT/lightDarkToggle.js"></script>
+  </body>
+</html>
